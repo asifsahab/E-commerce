@@ -7,7 +7,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active">Compare</li>
+                    <li class="breadcrumb-item active">Compared</li>
                 </ol>
             </nav>
         </div>
@@ -53,11 +53,11 @@
                                             <td class="pro-price">Rs:-{{$product->sprice}}</td>
                                             @endforeach
                                         </tr>
-                                     
+
                                         <tr>
                                             <td class="first-column">Stock</td>
 
-                                           
+
                                           @foreach($products as $product)
                                            <td class="pro-stock">{{$product->inhand>0?"In Stock":"Out of stock"}}</td>
                                             @endforeach
@@ -76,7 +76,7 @@
                                             <td class="first-column">Delete</td>
                                             @foreach($products as $index=>$product)
                                             <td class="pro-remove"><a id="{{$index}}" class="removecompare"><i class="fas fa-trash"></i></a></td>
-                                         
+
                                             @endforeach
                                         </tr>
                                              <tr>
@@ -91,7 +91,7 @@
                                     </td>
                                     @endforeach -->
                                 </tr>
-                                       
+
                                     </tbody>
                                 </table>
                             </div>
@@ -112,8 +112,8 @@ $(document).on("click",".add-to-cart",function(e)
 e.preventDefault();
     id=this.id;
     qty=1;
-   
-    
+
+
 $.ajaxSetup({
 headers: {
 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -127,7 +127,7 @@ headers: {
             success:function(data)
             {
                     loadcart();
-                  
+
             }
         });
 
@@ -137,9 +137,9 @@ $(document).on("click",".removecompare",function(e)
 {
 e.preventDefault();
     id=this.id;
-   
-   
-    
+
+
+
 $.ajaxSetup({
 headers: {
 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -152,7 +152,7 @@ headers: {
             dataType:'json',
             success:function(data)
             {
-         
+
                  window.location.href="/compare";
             }
         });
