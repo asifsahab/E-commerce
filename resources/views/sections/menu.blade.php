@@ -4,10 +4,10 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-3 col-sm-3 ">
-                    <a href="/"><h1 class="text-primary font-weight-bold">OnlineShop</h1></a> 
-                    <!--     <a href="index.html" class="site-brand">
-                            <img src="image/logo.png" alt="">
-                        </a> -->
+
+                 <a href="index.html" class="site-brand">
+                            <img src="https://play-lh.googleusercontent.com/LxBsjxy8_xFI7IkNsQeKl0RSuegjthKA8Mmmme9rTGiS_9zkJahznLB2jTr7pYKC_f8" alt="" width="50%;" height="50%;">
+                        </a>
                     </div>
                     <div class="col-md-3 col-sm-3 ">
                         <div class="header-phone ">
@@ -30,14 +30,14 @@
                 <li class="menu-item">
                     <a href="contact.html">Contact</a>
                 </li>
-                        
+
                         @guest
  <!-- <li class="menu-item"><a href="{{route('register')}}">Register</a></li> -->
  <li class="menu-item"><a href="{{route('login')}}">Login</a></li>
 
 
-                        @else 
-                         <li class="menu-item"><a href="{{route('profile')}}">Profile</a></li>  
+                        @else
+                         <li class="menu-item"><a href="{{route('profile')}}">Profile</a></li>
                 <!-- Pages -->
                 <li class="menu-item has-children">
                     <a href="javascript:void(0)">{{auth()->user()->fname." ".auth()->user()->lname}} <i
@@ -52,13 +52,13 @@ document.getElementById('logout-form').submit();"> Logout</a>
 @csrf
 </form>
                         </li>
-                        
+
                     </ul>
                 </li>
                 @endguest
                 <!-- Blog -->
-              
-                
+
+
             </ul>
         </div>
     </div>
@@ -75,16 +75,16 @@ document.getElementById('logout-form').submit();"> Logout</a>
                     class="fa fa-bars"></i>Browse
                 categories</a>
                 <ul class="category-menu">
-@foreach(\App\Models\Category::all() as $index=>$category) 
+@foreach(\App\Models\Category::all() as $index=>$category)
 <?php
 $new="Online-".preg_replace("/[^a-zA-Z0-9]+/", "-", $category->name);
 $new.="-Shopping-".$category->id;
 ?>
-@if($index<=5)      
+@if($index<=5)
 <li class="cat-item "><a href="{{$new}}">{{$category->name}}</a></li>
 @else
 <li class="cat-item hidden-menu-item"><a href="{{$new}}">{{$category->name}}</a></li>
-@endif      
+@endif
 @endforeach
 
 
@@ -125,12 +125,12 @@ Categories</a></li>
 </div>
 <div class="cart-dropdown-block">
 <div class=" single-cart-block" id="cartbox">
-   
+
 </div>
 <div class=" single-cart-block ">
     <div class="btn-block">
                <a href="{{url('cart')}}" class="btn btn--primary">View Cart<i
-        class="fas fa-chevron-right"></i></a>    
+        class="fas fa-chevron-right"></i></a>
                <a href="{{url('checkout')}}" class="btn">Checkout<i
         class="fas fa-chevron-right"></i></a>
     </div>

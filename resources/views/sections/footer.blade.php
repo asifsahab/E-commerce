@@ -1,54 +1,4 @@
-<!--=================================
-        Footer
-        ===================================== -->
-       
-    <!--=================================
-    Brands Slider
-    ===================================== -->
-    <section class="section-margin">
-        <h2 class="sr-only">Brand Slider</h2>
-        <div class="container">
-            <div class="brand-slider sb-slick-slider border-top border-bottom" data-slick-setting='{
-                                            "autoplay": true,
-                                            "autoplaySpeed": 8000,
-                                            "slidesToShow": 6
-                                            }' data-slick-responsive='[
-                {"breakpoint":992, "settings": {"slidesToShow": 4} },
-                {"breakpoint":768, "settings": {"slidesToShow": 3} },
-                {"breakpoint":575, "settings": {"slidesToShow": 3} },
-                {"breakpoint":480, "settings": {"slidesToShow": 2} },
-                {"breakpoint":320, "settings": {"slidesToShow": 1} }
-            ]'>
-                <div class="single-slide">
-                    <img src="image/others/brand-1.jpg" alt="">
-                </div>
-                <div class="single-slide">
-                    <img src="image/others/brand-2.jpg" alt="">
-                </div>
-                <div class="single-slide">
-                    <img src="image/others/brand-3.jpg" alt="">
-                </div>
-                <div class="single-slide">
-                    <img src="image/others/brand-4.jpg" alt="">
-                </div>
-                <div class="single-slide">
-                    <img src="image/others/brand-5.jpg" alt="">
-                </div>
-                <div class="single-slide">
-                    <img src="image/others/brand-6.jpg" alt="">
-                </div>
-                <div class="single-slide">
-                    <img src="image/others/brand-1.jpg" alt="">
-                </div>
-                <div class="single-slide">
-                    <img src="image/others/brand-2.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--=================================
-    Footer Area
-    ===================================== -->
+
     <footer class="site-footer">
         <div class="container">
             <div class="row justify-content-between  section-padding">
@@ -94,60 +44,34 @@
                         </ul>
                     </div>
                 </div>
-                <div class=" col-xl-3 col-lg-4 col-sm-6">
-                    <div class="footer-title">
-                        <h3>Newsletter Subscribe</h3>
-                    </div>
-                    <div class="newsletter-form mb--30">
-                        <form action="https://htmldemo.net/pustok/pustok/php/mail.php">
-                            <input type="email" class="form-control" placeholder="Enter Your Email Address Here...">
-                            <button class="btn btn--primary w-100">Subscribe</button>
-                        </form>
-                    </div>
-                    <div class="social-block">
-                        <h3 class="title">STAY CONNECTED</h3>
-                        <ul class="social-list list-inline">
-                            <li class="single-social facebook"><a href="#"><i class="ion ion-social-facebook"></i></a>
-                            </li>
-                            <li class="single-social twitter"><a href="#"><i class="ion ion-social-twitter"></i></a></li>
-                            <li class="single-social google"><a href="#"><i
-                                        class="ion ion-social-googleplus-outline"></i></a></li>
-                            <li class="single-social youtube"><a href="#"><i class="ion ion-social-youtube"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p class="copyright-heading">Suspendisse in auctor augue. Cras fermentum est ac fermentum tempor. Etiam
-                    vel
-                    magna volutpat, posuere eros</p>
-                <a href="#" class="payment-block">
-                    <img src="image/icon/payment.png" alt="">
-                </a>
-                <p class="copyright-text">Copyright © 2022 <a href="#" class="author">Pustok</a>. All Right Reserved.
+        <div class="container">
+
+
+                <p class="bg-dark text-light text-center">Copyright © 2022 <a href="#" class="">Pustok</a>. All Right Reserved.
                     <br>
                     Design By Pustok</p>
-            </div>
+
         </div>
 
 
     </footer>
-    
+
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
 <script>
 
         $(document).on("show.bs.modal","#quickModal",function(event){
-    
+
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
 
-        var button=$(event.relatedTarget);  
+        var button=$(event.relatedTarget);
         var id=button.data("id");
         $.ajax({
             url:"getdetail",
@@ -166,7 +90,7 @@ $.ajaxSetup({
                 $("#product_id").val(data.pid);
                 $("#pqty").val(data.qqty);
 
-                
+
             }
         });
     });
@@ -181,7 +105,7 @@ $.ajaxSetup({
             id=$("#pid").val();
             qty=$("#pqty").val();
 
-    
+
         $.ajax({
             url:"additem",
             method:'post',
@@ -227,17 +151,17 @@ $(document).on("submit",".directcart-form",function(event) {
 
 
 
-     
+
      $(document).on("click",".removeproduct",function(event){
     $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-              
+
             id=this.id;
-         
-      
+
+
         $.ajax({
             url:"removeproduct",
             method:'post',
@@ -245,7 +169,7 @@ $(document).on("submit",".directcart-form",function(event) {
             dataType:'json',
             success:function(data)
             {
-              
+
                   loadcart();
                   loadcartpage();
             }

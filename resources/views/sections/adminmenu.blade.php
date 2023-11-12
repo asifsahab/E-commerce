@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-3 ">
-            <a href="/"><h1 class="text-primary font-weight-bold">OnlineShop</h1></a> 
+            <a href="/"><h1 class="text-primary font-weight-bold">Easy Shop</h1></a>
                     </div>
                     <div class="col-lg-2">
                         <div class="header-phone ">
@@ -22,17 +22,17 @@
                             <ul class="main-menu menu-right ">
                                  <li class="menu-item">
                     <a href="{{url('/')}}">Website</a>
-             
+
                 </li>                    <li class="menu-item">
                  <a href="{{url('/admin')}}">Home</a>
-             
+
                 </li>
 
                 <li class="menu-item">
                     <a href="contact.html">Contact</a>
                 </li>
-                     
-                          
+
+
                 <!-- Pages -->
                 <li class="menu-item has-children">
                     <a href="javascript:void(0)">Entries<i
@@ -41,14 +41,14 @@
                         <li><a class="font-weight-bold" href="{{ route('addproducts')}}"> Add Products</a></li>
                         <li>
                              <a class="font-weight-bold" href="{{route('userpage')}}">Add User</a>
-                           
+
                         </li>
                            <li><a class="font-weight-bold" href="{{ route('stock')}}">Add Stock</a></li>
-            
+
                         </li>        <li><a class="font-weight-bold" href="{{ route('payment')}}">Add Payment</a></li>
-            
+
                         </li>        <li><a class="font-weight-bold" href="{{ route('reciept')}}">Add Reciept</a></li>
-            
+
                         </li>
                         <li>  <a class="font-weight-bold" href="{{url('viewoperatorpage')}}">Update_Order</a>
                         </li>
@@ -66,7 +66,7 @@
                         <li><a class="font-weight-bold" href="{{ route('customerledger')}}"> Customer Ledger</a></li>
 
 
-                        
+
                     </ul>
                 </li>
                   <li class="menu-item has-children">
@@ -82,13 +82,13 @@ document.getElementById('logout-form').submit();"> Logout</a>
 @csrf
 </form>
                         </li>
-                        
+
                     </ul>
                 </li>
-           
+
                 <!-- Blog -->
-              
-                
+
+
             </ul>
         </div>
     </div>
