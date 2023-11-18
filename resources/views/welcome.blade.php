@@ -85,7 +85,7 @@ Home Features Section
                 </div>
                 <div class="text">
                     <h5>Free Shipping Item</h5>
-                    <p> Orders over $500</p>
+                    <p> Orders over PKR-2000</p>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@ Home Features Section
                 </div>
                 <div class="text">
                     <h5>Cash On Delivery</h5>
-                    <p>Lorem ipsum dolor amet</p>
+                    <p>Cash on deleviry Available</p>
                 </div>
             </div>
         </div>
@@ -118,29 +118,9 @@ Home Features Section
                 </div>
                 <div class="text">
                     <h5>Help & Support</h5>
-                    <p>Call us : + 0123.4567.89</p>
+                    <p>Call us : 03356303511</p>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-</section>
-<!--=================================
-Promotion Section One
-===================================== -->
-<section class="section-margin">
-<h2 class="sr-only">Promotion Section</h2>
-<div class="container">
-    <div class="row space-db--30">
-        <div class="col-lg-6 col-md-6 mb--30">
-            <a href="#" class="promo-image promo-overlay">
-                <img src="image/bg-images/promo-banner-with-text.jpg" alt="">
-            </a>
-        </div>
-        <div class="col-lg-6 col-md-6 mb--30">
-            <a href="#" class="promo-image promo-overlay">
-                <img src="image/bg-images/promo-banner-with-text-2.jpg" alt="">
-            </a>
         </div>
     </div>
 </div>

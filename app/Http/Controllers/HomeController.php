@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function profile()
     {
         $user=auth()->user();
-       
+
         return view("profile",compact("user"));
     }
     public function updateaccount()
@@ -26,7 +26,7 @@ class HomeController extends Controller
 
             "confirm_pwd"=>"same:new_pwd",
         ]);
-            
+
 
     auth()->user()->update(['fname'=>request()->fname,'lname'=>request()->lname]);
 
@@ -38,14 +38,14 @@ class HomeController extends Controller
         Auth::logout();
         return json_encode(["a"=>1]);
 
-         
+
 
     }
        return  json_encode(["a"=>"profile Updated Successfully"]);
     }
     public function updateaddress()
     {
-        
+
                 $address=[
         "address1"=>request()->address1,
         "address2"=>request()->address2,

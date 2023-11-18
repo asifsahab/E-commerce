@@ -21,9 +21,11 @@ Route::get('/restt',function()
 });
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('main');
 
+Route::get('/contact', [App\Http\Controllers\MainController::class, 'contact'])->name('contact');
+
 Route::post('/removecompare', [App\Http\Controllers\MainController::class, 'removecompare'])->name('removecompare');
 Route::post('/getdetail', [App\Http\Controllers\MainController::class, 'getdetail'])->name('getdetail');
-	
+
 Route::post('/additem', [App\Http\Controllers\MainController::class, 'additem'])->name('additem');
 Route::post('/orderbill', [App\Http\Controllers\MainController::class, 'orderbill'])->name('orderbill');
 Route::post('/checkinfo', [App\Http\Controllers\MainController::class, 'checkinfo'])->name('checkinfo');

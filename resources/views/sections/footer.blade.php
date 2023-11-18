@@ -4,15 +4,12 @@
             <div class="row justify-content-between  section-padding">
                 <div class=" col-xl-3 col-lg-4 col-sm-6">
                     <div class="single-footer pb--40">
-                        <div class="brand-footer footer-title">
-                            <img src="image/logo--footer.png" alt="">
+                        <div>
+                            <img src="image/icon/easyshop.png" alt="" width="40%" height="40%">
                         </div>
                         <div class="footer-contact">
-                            <p><span class="label">Address:</span><span class="text">Example Street 98, HH2 BacHa, New
-                                    York,
-                                    USA</span></p>
-                            <p><span class="label">Phone:</span><span class="text">+18088 234 5678</span></p>
-                            <p><span class="label">Email:</span><span class="text">suport@hastech.com</span></p>
+                            <p><span class="label">Address:</span><span class="text">Islamabad, Pakistan</span></p>
+                            <p><span class="label">Email:</span><span class="text">asif.sahab64@gmail.com</span></p>
                         </div>
                     </div>
                 </div>
@@ -25,8 +22,7 @@
                             <li><a href="#">Prices drop</a></li>
                             <li><a href="#">New products</a></li>
                             <li><a href="#">Best sales</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Sitemap</a></li>
+                            <li><a href="{{route('contact')}}">Contact us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -36,24 +32,18 @@
                             <h3>Extras</h3>
                         </div>
                         <ul class="footer-list normal-list">
-                            <li><a href="#">Delivery</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Stores</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Sitemap</a></li>
+                            <li><a href="{{route('contact')}}">About Us</a></li>
+                            <li><a href="#">Store</a></li>
+                            <li><a href="{{route('contact')}}">Contact us</a></li>
                         </ul>
                     </div>
                 </div>
 
             </div>
         </div>
+
         <div class="container">
-
-
-                <p class="bg-dark text-light text-center">Copyright © 2022 <a href="#" class="">Pustok</a>. All Right Reserved.
-                    <br>
-                    Design By Pustok</p>
-
+            <p class="bg-dark text-light text-center">Copyright © <a href="{{route('main')}}" class="">EasyShop</a>. All Right Reserved.</p>
         </div>
 
 

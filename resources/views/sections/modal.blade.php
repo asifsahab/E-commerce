@@ -17,20 +17,9 @@
                                     "asNavFor": ".product-slider-nav"
                                     }'>
                                     <div class="single-slide" id="mainimage">
-                                        
+
                                     </div>
-                                    <div class="single-slide">
-                                        <img src="image/products/product-details-2.jpg" alt="">
-                                    </div>
-                                    <div class="single-slide">
-                                        <img src="image/products/product-details-3.jpg" alt="">
-                                    </div>
-                                    <div class="single-slide">
-                                        <img src="image/products/product-details-4.jpg" alt="">
-                                    </div>
-                                    <div class="single-slide">
-                                        <img src="image/products/product-details-5.jpg" alt="">
-                                    </div>
+
                                 </div>
                                 <!-- Product Details Slider Nav -->
                                 <div class="mt--30 product-slider-nav sb-slick-slider arrow-type-two"
@@ -45,21 +34,7 @@
               "asNavFor": ".product-details-slider",
               "focusOnSelect": true
               }'>
-                                    <div class="single-slide">
-                                        <img src="image/products/product-details-1.jpg" alt="">
-                                    </div>
-                                    <div class="single-slide">
-                                        <img src="image/products/product-details-2.jpg" alt="">
-                                    </div>
-                                    <div class="single-slide">
-                                        <img src="image/products/product-details-3.jpg" alt="">
-                                    </div>
-                                    <div class="single-slide">
-                                        <img src="image/products/product-details-4.jpg" alt="">
-                                    </div>
-                                    <div class="single-slide">
-                                        <img src="image/products/product-details-5.jpg" alt="">
-                                    </div>
+
                                 </div>
                             </div>
                             <div class="col-lg-7 mt--30 mt-lg--30">
@@ -67,8 +42,8 @@
                                     <p class="tag-block">Category : <a class=" catname" href="#"></a></p>
                                     <h3 class="product-title" id="ptitle"></h3>
                                     <ul class="list-unstyled">
-                                     <li>Dilevery charges: <span class="list-value">{{$product->dilevery}}</span></li>
-                                        <li>Brands: <a href="#" class="list-value font-weight-bold">{{$product->brand}}</a></li>
+
+
                                         <!-- <li>Product Code: <span class="list-value"> model1</span></li> -->
                                         <!-- <li>Reward Points: <span class="list-value"> 200</span></li>  -->
                                         <li>Availability: <span class="list-value"> In Stock</span></li>
@@ -79,18 +54,18 @@
                                         <span class="price-discount">50%</span> -->
                                     </div>
                                     <div class="rating-widget">
-                                    
+
 
 
                           </div>
                                     <article class="product-details-article">
                                         <h4 class="sr-only">Product Summery</h4>
                                         <p id='des'>
-                                            
+
                                         </p>
                                     </article>
                                      <form method="post" id="addtocart">
-                                     
+
                                     <div class="add-to-cart-row">
                                        <input type="hidden" id="pid" value="">
                                         <div class="count-input-block">
@@ -101,7 +76,7 @@
                                             <button type="submit" class="btn btn-outlined--primary"><span
                                                     class="plus-icon">+</span>Add to Cart</button>
                                         </div>
-                                        
+
                                     </div>
                                     </form>
                                     <!-- <div class="compare-wishlist-row">

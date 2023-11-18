@@ -14,7 +14,7 @@ use App\Models\Sale;
 use Session;
 
 class MainController extends Controller
-{       
+    {
 
     public function singleproduct($id)
     {
@@ -40,12 +40,12 @@ class MainController extends Controller
             "rating"=>$request->rating,
 
         ]);
-       
+
 
         return back();
     }
         public function showcategory($slug)
-        { 
+        {
         $parts=explode("-",$slug);
         $id=$parts[count($parts)-1];
         $category=Category::find($id);
@@ -87,7 +87,7 @@ class MainController extends Controller
 
 public function compare()
 {
-   
+
   if(request()->pid)
 {
     $data = session()->get('compare', []);
@@ -107,19 +107,19 @@ public function compare()
     public function cityinfo()
     {
            $cityname=request()->cityname;
-          
+
         $city=City::where("name",$cityname)->first();
         if($city)
            {
         return  json_encode(["a"=>$city->state,"b"=>$city->postalcode]);
             }
-              
+
     }
- 
-    
+
+
     public function checkinfo()
     {
-        
+
         $output=0;
         $email=request('email');
         $pass=request('pass');
@@ -127,7 +127,7 @@ public function compare()
        $credentials =['email'=>$email,'password'=>$pass];
         if (Auth::attempt($credentials)) {
             $user=auth()->user();
-            
+
         }
         if($user)
         {
@@ -150,7 +150,7 @@ public function compare()
                                                 <label>Company Name</label>
                                                 <input type='text' value='".$user->cname."' name='cname' placeholder='Company Name'>
                                             </div>
-                                            
+
                                             </div>
                                             <div class='row'>
                                                 <div class='col-md-6 col-12 mb--20'>
@@ -163,7 +163,7 @@ public function compare()
                                             </div>
 
                                             </div>
-                                            
+
                                             <div class='col-12 mb--20'>
                                                 <label>Address*</label>
                                                 <input type='text'  value='".$user->address1."'name='address1' placeholder='Address line 1'>
@@ -171,12 +171,12 @@ public function compare()
                                             </div>
                                             <div class='col-12 col-12 mb--20'>
                                                 <div class='row'>
-                                                    
-                                                
+
+
                                                 <div class='col-md-12 col-12 mb--20'>
                                                 <label>City</label>
                                                 <select id='cityname' value='".$user->city."' name='city' class='mys'>";
-                                              
+
                                                 foreach($cities as $city)
                                                 {
                                                 $output.="
@@ -186,14 +186,14 @@ public function compare()
                                                 }
                                                     $output.="
                                                 </select>
-                                                
+
                                                 </div>
                                             <div  class='col-md-8 col-12 mb--20'>
                                                 <label>State*</label>
                                                 <input id='state1' type='text' value='".$user->state."' name='state' placeholder='State'>
                                             </div>
                                             </div>
-                                            
+
                                             <div class='row'>
                                             <div class='col-md-6 col-12 mb--20'>
                                                 <label>Zip Code*</label>
@@ -207,12 +207,12 @@ public function compare()
              ";
         }
         return json_encode(["output"=>$output]) ;
-            
+
     }
     public function orderbill()
-{ 
+{
     $output="";
-    if(session('cart')) 
+    if(session('cart'))
     {
 
     $output="<div class='checkout-cart-total'>
@@ -235,13 +235,13 @@ $output.="
     }
         $discount=0;
     if(session('discount'))
-    {   
+    {
         $discount=session('discount');
         $tprice=$tprice-$tprice*$discount/100;
     }
     $gtotal=$tprice;
     $output.="
-   
+
 
 </ul>
 <p>Sub Total <span>".$tprice."</span></p>
@@ -277,17 +277,17 @@ conditions</label>
                     $address=[
                         "address1"=>$ad1,
                         "address2"=>$ad2];
-                        
+
                         auth()->user()->update($address);
                     }
                     $user=auth()->user();
 
-                  
-                    
+
+
                 }
                 else
                 {
-                  
+
                 $password=bcrypt($request["password"]);
                 unset($request['ordernote']);
                 unset($request['_token']);
@@ -296,15 +296,15 @@ conditions</label>
                 $data=array_merge($data1,['password'=>$password]);
                 $user=User::Create($data);
                 }
-                             
+
                 $discount=null;
                 if(session('discount'))$discount=session('discount');
                 $sale=Sale::create(['user_id'=>$user->id,'discount'=>$discount,'ordernote'=>$ordernote]);
 
                  $items=session()->get("cart",[]);
-                 
+
          foreach($items as $index=>$item)
-         {  
+         {
             $totalbill=0;
             $pid=$item['id'];
             $qty=$item['qty'];
@@ -320,7 +320,7 @@ conditions</label>
 
 
         }
-        ////// order thanks page code 
+        ////// order thanks page code
           $tprice=0;
           $output="";
     foreach($items as $item)
@@ -334,12 +334,12 @@ conditions</label>
     }
         $discount=0;
     if(session('discount'))
-    {   
+    {
         $discount=session('discount');
         $tprice=$tprice-$tprice*$discount/100;
     }
-  
-      
+
+
 
 
 
@@ -372,10 +372,10 @@ conditions</label>
         $product=Product::find($pid);
         $diss=$sale->discount;
         $price=$product->sprice*$qty;
-       
 
-    
-                                  
+
+
+
                                    $output.=" <tr>
                                         <td><a href='#'>".$product->name."</a> <strong>×".$qty."</strong></td>
                                         <td><span>".$price."</span></td>
@@ -388,7 +388,7 @@ conditions</label>
                                         <th>discount:</th>
                                         <td><span>".$diss."</span></td>
                                     </tr>
-                               
+
                                     <tr>
                                         <th>Payment Method:- Cash on Delivery</th>
                                         <td>fixed</td>
@@ -402,10 +402,10 @@ conditions</label>
                         </div>
                     </div>";
                       session()->forget("cart","discount","compare");
-               return view("order",compact("output")); 
-                
+               return view("order",compact("output"));
+
                }
-               return redirect("/checkout"); 
+               return redirect("/checkout");
             }
 
 		public function checkout()
@@ -419,7 +419,7 @@ conditions</label>
 		 if (!empty($discount)) {
 		 	$discount=$discount->discount;
 			 }
- 
+
 	 session()->put("discount",$discount);
 		return "Yo bitch";
 
@@ -429,7 +429,7 @@ conditions</label>
       $output="";
 
       	$subtotal=0;
-      
+
          $items=session()->get("cart",[]);
          foreach($items as $index=>$item)
          {
@@ -440,7 +440,7 @@ conditions</label>
 
             $subtotal+=$price;
             $output.="<tr>
-                                               
+
                    <td id=".$index." class='removeproduct'><a href='#'><i class='far fa-trash-alt'></i></a>
                                         </td>
                                                 <td class='pro-thumbnail'><a href='#'><img
@@ -450,8 +450,8 @@ conditions</label>
                                                 <td class='pro-quantity'>
                                                     <div class='pro-qty'>
                                                         <div class='count-input-block'>
-                                                            <input type='number' 
-                                                            id='".$pid."' 
+                                                            <input type='number'
+                                                            id='".$pid."'
                                                             class='form-control cartqty text-center'
                                                                 value='".$qty."'>
                                                         </div>
@@ -460,24 +460,24 @@ conditions</label>
                                                 <td class='pro-subtotal'><span>".$price."
                                              </span></td>
                                             </tr>
-                                        
+
                                             ";
          }
-     
+
                             		$grandtotal=$subtotal;
                             		$dis=0;
                             if(session('discount'))
                             {
                             	$dis=session("discount");
 
-        						$grandtotal=$subtotal-$subtotal*$dis/100;    
+        						$grandtotal=$subtotal-$subtotal*$dis/100;
                             }
                             else{
                             	    $output.="<tr>
 
                                 <td colspan='6' class='actions'>
 
-                                
+
 
                                     <div class='coupon-block'>
 
@@ -497,16 +497,16 @@ conditions</label>
 
                                     </div>
 
-                                    
 
-                                  
+
+
 
                                 </td>
 
                             </tr>";
                             }
-                          
-                                            
+
+
                         $summary="    <div class='cart-summary'>
                                 <div class='cart-summary-wrap'>
                                     <h4><span>Cart Summary</span></h4>
@@ -517,7 +517,7 @@ conditions</label>
                                 </div>
                                 <div class='cart-summary-button'>
                                     <a href=".url('/checkout')." class='checkout-btn c-btn btn--primary'>Checkout</a>
-                                    
+
                                 </div>
                             </div>";
       return json_encode(["output"=>$output,"summary"=>$summary]);
@@ -529,7 +529,7 @@ conditions</label>
    public function index($title="Products")
    {
    		// session()->flush();
-    $products=Product::latest()->paginate(8);
+      $products=Product::latest()->paginate(8);
       return view("welcome",compact("products","title"));
    }
 
@@ -562,7 +562,7 @@ conditions</label>
      {
       $id=request('id');
       $qty=request('qty');
-      $flag=0;  
+      $flag=0;
 
       $items=session()->get('cart',[]);
 
@@ -577,7 +577,7 @@ conditions</label>
             break;
          }
       }
-     
+
       if($flag==0)
       {
       $array=["id"=>$id,"qty"=>$qty];
@@ -627,12 +627,9 @@ conditions</label>
          session()->put('cart',$items);
          return 1;
       }
-
-
-
-
-
-
-
+      public function contact()
+      {
+          return view('sections.contact');
+      }
 
 }
