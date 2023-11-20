@@ -6,20 +6,16 @@
                     <div>
                         <img src="image/icon/easyshop.png" alt="" width="40%" height="40%">
                     </div>
-                    <div class="footer-contact">
-                        <p><span class="label">Address:</span><span class="text">Islamabad, Pakistan</span></p>
-                        <p><span class="label">Email:</span><span class="text">asif.sahab64@gmail.com</span></p>
-                    </div>
                 </div>
             </div>
             <div class=" col-xl-3 col-lg-2 col-sm-6">
                 <div class="single-footer pb--40">
                     <div class="footer-title">
-                        <h3>Information</h3>
+                        <h3>UseFul Links</h3>
                     </div>
                     <ul class="footer-list normal-list">
-                        <li><a href="#">New products</a></li>
-                        <li><a href="#">Best sales</a></li>
+                        <li><a href="{{ route('contact') }}">Home</a></li>
+                        <li><a href="{{ route('contact') }}">About Us</a></li>
                         <li><a href="{{ route('contact') }}">Contact us</a></li>
                     </ul>
                 </div>
@@ -27,12 +23,14 @@
             <div class=" col-xl-3 col-lg-2 col-sm-6">
                 <div class="single-footer pb--40">
                     <div class="footer-title">
-                        <h3>Extras</h3>
+                        <h3>Contact Us</h3>
                     </div>
                     <ul class="footer-list normal-list">
-                        <li><a href="{{ route('contact') }}">About Us</a></li>
-                        <li><a href="#">Store</a></li>
-                        <li><a href="{{ route('contact') }}">Contact us</a></li>
+                        <div class="footer-contact">
+                            <p><span class="label"><i class="fa fa-map-marker"></i>&nbsp;</span><span class="text">I-9/3, Islamabad, Pakistan</span></p>
+                            <p><span class="label"><i class="fas fa-envelope"></i>&nbsp;</span><span class="text">asif.sahab64@gmail.com</span></p>
+                            <p><span class="label"><i class="fas fa-phone"></i>&nbsp;</span><span class="text">03356303511</span></p>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -41,7 +39,7 @@
     </div>
 
     <div class="container">
-        <p class="bg-dark text-light text-center">Copyright © <a href="{{ route('main') }}" class="">EasyShop</a>.
+        <p class="bg-dark text-light text-center">Copyright &copy; {{Carbon\Carbon::now()->format('Y')}} <a href="{{ route('main') }}" class="">EasyShop</a>.
             All Right Reserved.</p>
     </div>
 

@@ -34,13 +34,13 @@
                                     </div>
                                 </div>
                                 <div class="col-xl-4 col-md-4 col-sm-6  mt--10 mt-sm--0">
-                                   
+
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-6  mt--10 mt-md--0">
-                                   
+
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-6 mt--10 mt-md--0 ">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -61,13 +61,13 @@
                                     </div>
                                 </div>
                                 <div class="col-xl-5 col-md-4 col-sm-6  mt--10 mt-sm--0">
-                                    
+
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-6  mt--10 mt-md--0">
-                                   
+
                                 </div>
                                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mt--10 mt-md--0 ">
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -81,22 +81,22 @@
                                             <a href="#" class="author">
                                               {{$product->category->name}}
                                             </a>
-                                            <h3><a href="product-details.html"> {{$product->name}}</a></h3>
+                                            <h3><a href="/singleproduct/{{ $product->id }}>{{ $product->name }}"> {{$product->name}}</a></h3>
                                         </div>
                                         <div class="product-card--body">
                                             <div class="card-image">
                                                 <img src="{{'storage/'.$product->image}}" alt="">
                                                 <div class="hover-contents">
-                                                    <a href="product-details.html" class="hover-image">
+                                                    <a href="/singleproduct/{{ $product->id }}>{{ $product->name}}" class="hover-image">
                                                         <img src="{{'storage/'.$product->image}}" alt="">
                                                     </a>
                                                     <div class="hover-btns">
-                                                  
-                                                   
+
+
                                                   <form action="/compare" method="get">
                                         @csrf
                                         <input type="hidden" value="{{$product->id}}" name="pid">
-                                        <button class="single-btn" type="submit"><i class="fas fa-random"></i></button>     
+                                        <button class="single-btn" type="submit"><i class="fas fa-random"></i></button>
                                     </form>
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#quickModal" data-id="{{$product->id}}"
                                         class="single-btn">
@@ -153,10 +153,10 @@
                             @endforeach
                             @endif
                         </div>
-                       
+
                         <div class="row pt--30">
                             <div class="col-md-12">
-                                
+
                             </div>
                         </div>
                             <div class="row pt--30">
@@ -169,7 +169,7 @@
                             </div>
                         </div>
                         <!-- Pagination Block -->
-                   
+
                         <!-- Modal -->
                           </div>
                    <div class="col-lg-3  mt--40 mt-lg--0">
@@ -178,7 +178,7 @@
                             <div class="single-block">
                                 <h3 class="sidebar-title">Categories</h3>
                                 <ul class="sidebar-menu--shop">
-                          @foreach(\App\Models\Category::all() as $index=>$category) 
+                          @foreach(\App\Models\Category::all() as $index=>$category)
                           <?php
 $new="Online-".preg_replace("/[^a-zA-Z0-9]+/", "-", $category->name);
 $new.="-Shopping-".$category->id;
@@ -193,7 +193,7 @@ $new.="-Shopping-".$category->id;
                                 <div class="range-slider pt--30">
                                     <div class="sb-range-slider"></div>
                                     <div class="slider-price">
-                                        <p> 
+                                        <p>
                                             <form action="/test">
                                             <input type="text" name="pricerange" id="amount" readonly="">
                                             <button>submit</button>
@@ -203,7 +203,7 @@ $new.="-Shopping-".$category->id;
                                 </div>
                             </div> -->
                             <!-- Size -->
-                        
+
                             <!-- Promotion Block -->
                             <div class="single-block">
                                 <a href="#" class="promo-image sidebar">

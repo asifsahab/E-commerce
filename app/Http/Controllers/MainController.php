@@ -631,5 +631,14 @@ conditions</label>
       {
           return view('sections.contact');
       }
+      public function submit()
+      {
+          return view('submit');
+      }
+      public function about()
+      {
+          return view('about');
+      }
+
 
 }

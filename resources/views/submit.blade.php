@@ -24,23 +24,12 @@
     Hero Area
     ===================================== -->
     <div class="container mt-5">
-        <h1 class="text-center">Contact Us</h1>
-        <form>
-            <div class="form-group">
-                <label for="name">Your Name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
-            </div>
-            <a href="{{ route('submit') }}" class="btn btn-outline-success bg-green">Submit</a>
-        </form>
+        <div class="alert alert-success">
+            Thank you for your message! We'll get back to you soon.
+        </div>
     </div>
+
+
 
     @include('sections.footer')
     @include('sections.modal')

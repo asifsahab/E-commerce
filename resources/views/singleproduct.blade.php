@@ -6,7 +6,7 @@
         <div class="breadcrumb-contents">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('main') }}">Home</a></li>
                     <li class="breadcrumb-item active">Product Details</li>
                 </ol>
             </nav>
@@ -23,10 +23,10 @@
             </div>
             <div class="col-lg-7">
                 <div class="product-details-info pl-lg--30 ">
-                    
+
                     <h3 class="product-title">{{$product->name}}</h3>
                     <ul class="list-unstyled">
-                        
+
                         <li>Product Category: <span class="list-value">{{$product->category->name}}</span></li>
                         <li>Product Code: <span class="list-value">{{$product->id}}</span></li>
                         <li>Availability: <span class="list-value">{{$product->inhand>0?'In Stock':'Out of Stock'}}</span></li>
@@ -39,7 +39,7 @@
                               <div class="rating-block">
                                       @if($product->ratings->count() > 0)
                                 <ul>
-                                    
+
                                     <li>
                                         <div class="rating">
                                             @for($i = 1; $i <= 5; $i++)
@@ -51,19 +51,19 @@
                                             @endfor
                                         </div>
                                     </li>
-                                    
+
                                 </ul>
                                 @else
                                 <p>No ratings found.</p>
                                 @endif
                         </div>
-                        
+
                         <div class="review-widget w-100 mt-3">
-                            <a href="#">({{$product->rcountt}} Reviews)</a>                             
+                            <a href="#">({{$product->rcountt}} Reviews)</a>
                         </div>
                     </div>
                       <form method="post" id="addtocart1">
-                                     
+
                                     <div class="add-to-cart-row">
                                        <input type="hidden" id="pid" value="{{$product->id}}">
                                         <div class="count-input-block">
@@ -74,15 +74,15 @@
                                             <button type="submit" class="btn btn-outlined--primary"><span
                                                     class="plus-icon">+</span>Add to Cart</button>
                                         </div>
-                                        
+
                                     </div>
                                     </form>
                 <div class="compare-wishlist-row my-4">
-                    
+
                        <form action="/compare" method="get">
                                         @csrf
                                         <input type="hidden" value="{{$product->id}}" name="pid">
-                                        <button class="single-btn" type="submit"><i class="fas fa-random"></i></button>     
+                                        <button class="single-btn" type="submit"><i class="fas fa-random"></i></button>
                                     </form>
                 </div>
             </div>
@@ -115,12 +115,12 @@
                     <h2 class="title-lg mb--20">{{$product->rcountt}} REVIEW FOR {{$product->name}}</h2>
                     @foreach($product->ratings as $rating)
                     <div class="review-comment mb--20">
-                        
+
                         <div class="text">
                             <div class="rating-block mb--15">
                                 @if($rating->count() > 0)
                                 <ul>
-                                    
+
                                     <li>
                                         <div class="rating">
                                             @for($i = 1; $i <= 5; $i++)
@@ -132,7 +132,7 @@
                                             @endfor
                                         </div>
                                     </li>
-                                    
+
                                 </ul>
                                 @else
                                 <p>No ratings found.</p>
@@ -147,7 +147,7 @@
                             @auth
                     <h2 class="title-lg mb--20 pt--15">ADD A REVIEW</h2>
                     <div class="rating-row pt-2">
-                       
+
                         <form method="POST" action="{{ route('ratings.store') }}">
                             @csrf
                             <div class="form-group">
@@ -161,8 +161,8 @@
                                 </select>
                             </div>
                             <input type="hidden" name="product_id" value="{{$product->id}}">
-                          
-                       
+
+
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="comment">Comment</label>
@@ -174,15 +174,15 @@
                                         <textarea name="comment" id="comment" cols="15" rows="2"
                                         class="form-control"></textarea>
                                     </div>
-                               
+
                                     </div>
                                       <button type="submit" class="btn btn-primary">Submit</button>
-                  
+
                                           </form>
                                           @endauth
                                 </div>
                             </div>
-                   
+
                     </div>
                 </div>
             </div>
@@ -217,7 +217,7 @@ RELATED PRODUCTS BOOKS
                         </a>
                         <h3><a href="/singleproduct/{{$pro->id}}">{{$pro->name}}</a></h3>
                     </div>
-               
+
                         <div class="product-card--body">
                         <div class="card-image">
                             <img src="{{asset('storage/'.$pro->image)}}">
@@ -235,7 +235,7 @@ RELATED PRODUCTS BOOKS
 </form> -->
                                     <!--   <a href="wishlist.html" class="single-btn">
                                     <i class="fas fa-heart"></i> </a> -->
-                                    
+
                                     <form action="/compare" method="get">
                                         @csrf
                                         <input type="hidden" value="{{$pro->id}}" name="pid">
@@ -263,7 +263,7 @@ RELATED PRODUCTS BOOKS
 </section>
 @include("sections.footer")
 <script type="text/javascript">
-  
+
    $(document).on("submit","#addtocart1",function(event){
     $.ajaxSetup({
     headers: {
@@ -279,4 +279,5 @@ RELATED PRODUCTS BOOKS
 
 
 </script>
+
 @endsection

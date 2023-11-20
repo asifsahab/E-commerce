@@ -6,7 +6,7 @@
                     <div class="col-md-3 col-sm-3 ">
 
                         <a href="{{ route('main') }}" class="site-brand">
-                            <img src="image/icon/easyshop.png" alt="" width="50%;" height="50%;">
+                            <img src="{{asset('image/icon/easyshop.png')}}" alt="" width="50%;" height="50%;">
                         </a>
                     </div>
                     <div class="col-md-3 col-sm-3 ">
@@ -29,6 +29,9 @@
 
                                 <li class="menu-item">
                                     <a href="{{ route('contact') }}">Contact</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{{ route('about') }}">About Us</a>
                                 </li>
 
                                 @guest

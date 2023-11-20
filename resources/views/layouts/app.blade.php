@@ -8,11 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Home - EasyShop</title>
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/plugins.css') }}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('css/main.css') }}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('chart/apexcharts.css') }}" />
-
+    <link rel="icon" href="{{asset('image/icon/icon.png')}}">
 
 
 </head>

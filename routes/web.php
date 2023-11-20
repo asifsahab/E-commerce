@@ -22,6 +22,8 @@ Route::get('/restt',function()
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('main');
 
 Route::get('/contact', [App\Http\Controllers\MainController::class, 'contact'])->name('contact');
+Route::get('/submit', [App\Http\Controllers\MainController::class, 'submit'])->name('submit');
+Route::get('/about', [App\Http\Controllers\MainController::class, 'about'])->name('about');
 
 Route::post('/removecompare', [App\Http\Controllers\MainController::class, 'removecompare'])->name('removecompare');
 Route::post('/getdetail', [App\Http\Controllers\MainController::class, 'getdetail'])->name('getdetail');

@@ -31,8 +31,8 @@
                                         <tr>
                                             <td class="first-column">Product</td>
                                             @foreach($products as $product)
-                                            <td class="product-image-title">
-                                                <a href="#" class="image"><img src="{{asset('storage/'.$product->image)}}"
+                                            <td class="product-image-title ">
+                                                <a href="#" class="image"><img src="{{asset('storage/'.$product->image)}} "
                                                         alt="Compare Product"></a>
                                                 <a href="#" class="category">{{$product->category->name}}</a>
                                                 <a href="#" class="title">{{$product->name}}</a>
