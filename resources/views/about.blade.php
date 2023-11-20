@@ -31,9 +31,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h2 class="mb-4">About Us</h2>
-                    <p>Welcome to Your Company, your trusted online source for quality products and exceptional service. We are committed to providing a seamless shopping experience, offering a wide range of products to suit your needs.</p>
-                    <p>At Your Company, we strive to stay ahead in fashion, technology, and lifestyle trends. Our focus on customer satisfaction drives us to deliver superior service, prompt shipping, and hassle-free returns, ensuring a positive experience every time you shop with us.</p>
-                    <p>Explore our collection and discover a world of possibilities. Join us in our mission to redefine online shopping and create lasting connections with our valued customers.</p>
+                    <p>Welcome to EasyShop, your ultimate online shopping destination! At EasyShop, we redefine convenience by offering a seamless and delightful shopping experience. Discover a vast array of quality products curated to suit your every need, from trending fashion and cutting-edge technology to everyday essentials.</p>
+                    <p>Our commitment at EasyShop is to ensure customer satisfaction at every step. We pride ourselves on delivering top-notch service, lightning-fast shipping, and hassle-free returns. With a user-friendly interface and secure transactions, we aim to make your shopping journey effortless and enjoyable.</p>
+                    <p>Join us in exploring the latest trends, finding must-have items, and experiencing the joy of shopping from the comfort of your home. At EasyShop, we strive to exceed your expectations and create lasting relationships with our valued customers. Embrace simplicity, explore diversity, and shop with ease at EasyShop!</p>
                 </div>
                 <div class="col-lg-6">
                     <img src="{{asset ('image/icon/aboutpic.jpg') }}" alt="About Us Image" class="img-fluid rounded about-image">
