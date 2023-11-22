@@ -15,7 +15,7 @@
                             </div>
                             <div class="text">
                                 <p>Free Support 24/7</p>
-                                <p class="font-weight-bold number">+01-202-555-0181</p>
+                                <p class="font-weight-bold number">03356303511</p>
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                                 </li>
 
                                 <li class="menu-item">
-                                    <a href="contact.html">Contact</a>
+                                    <a href="{{url('/contact') }}">Contact</a>
                                 </li>
 
 

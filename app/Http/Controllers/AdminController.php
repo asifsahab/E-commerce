@@ -18,7 +18,7 @@ $output=" <div id='billing-form' class='mb-40'>
     <div class='row'>
         <div class='col-md-12 col-12 mb--10'>
             <label>Product Name*</label>
-            
+
             <input required type='text' name='name' value='".$product->name."' placeholder='Name'>
             <input type='hidden' name='flag' value='".$product->id."'>
         </div>
@@ -40,7 +40,7 @@ $output=" <div id='billing-form' class='mb-40'>
                 $output.="
             </select>
         </div>
-        
+
         <div class='col-md-12 col-12 mb--20'>
             <label>Description*</label>
             <textarea name='description' placeholder='Description' class='form-control'>$product->description</textarea>
@@ -53,13 +53,13 @@ $output=" <div id='billing-form' class='mb-40'>
             <label>Sale*</label>
             <input required type='text' name='sprice' value='".$product->sprice."' placeholder='Sale'>
         </div>
-        
-        
+
+
         <div class='col-12 mb--20'>
             <label>image*</label>
             <input  type='file' name='image'>
         </div>
-        
+
     </div>
     <div class='col-md-10 mx-auto'>
         <button type='submit' class='btn btn--primary'>Update</button>
@@ -143,7 +143,7 @@ public function changestatus()
 $status=request()->status;
 $id=request()->id;
     if($status==5)
-        {   
+        {
             $total=0;
             $sale=Sale::find($id);
 
@@ -196,18 +196,18 @@ $ops=[
 $output="
 <table class='table-bordered table'>
     <thead>
-        
+
         <th>Order #</th>
         <th>Client Info</th>
         <th>Status</th>
-        
+
     </thead>
     <tbody>
         <tr>
             <td valign='middle'>$order->id</td>
             <td valign='middle'>".$order->clientinfo."</td>
             <td valign='middle'> <select  class='form-control' id='status'>";
-                
+
                 foreach($ops as $index=>$op)
                 {
                 if($index==$order->status) $output.="<option selected value='$index'>$op</option>";
@@ -270,17 +270,17 @@ if($id!=Null)
 {
 $user=User::find($id);
 $output="<form method='post' class='checkout-form' id='updateoperatordata'>
-    
+
     <div id='billing-form' class='mb-40 '>
-        
+
         <div class='row'>
             <div class='col-md-12 col-12 mb--20'>
                 <label>First Name$id*</label>
                 <input type='text' name='fname' placeholder='First Name' value='".$user->fname."'>
                 <div id='error-fname'></div>
             </div>
-            
-            
+
+
             <div class='col-md-6 col-12 mb--20'>
                 <label>Email Address*</label>
                 <input readonly type='email' name='email' placeholder='Email Address' value='".$user->email."'>
@@ -291,8 +291,8 @@ $output="<form method='post' class='checkout-form' id='updateoperatordata'>
                 <input type='text' name='phone' placeholder='Phone number' value='".$user->phone."'>
                 <div id='error-phone'></div>
             </div>
-            
-            
+
+
             <div class='col-md-12 col-12 mb--20'>
                 <label>Role*</label>
                 <select ' name='role'  class='nice-select'>
@@ -300,19 +300,19 @@ $output="<form method='post' class='checkout-form' id='updateoperatordata'>
                     if($user->role==1)
                     {
                     $output.="
-                    
+
                     <option value='2'>Operator</option>
                     <option selected  value='1'>Admin</option>";
                     }
                     else
                     {
                     $output.="
-                    
+
                     <option selected value='2'>Operator</option>
                     <option   value='1'>Admin</option>";
                     }
                     $output.="
-                    
+
                 </select>
                 <div id='error-role'></div>
             </div>
@@ -325,8 +325,8 @@ $output="<form method='post' class='checkout-form' id='updateoperatordata'>
             <div class='col-md-12 col-12 mb--20'>
                 <button type='submit' class='btn btn--primary'>Update Operator</button>
             </div>
-            
-            
+
+
         </div>
     </div>
 </form>";
@@ -334,18 +334,18 @@ $output="<form method='post' class='checkout-form' id='updateoperatordata'>
 else
 {
 $output="<form method='post' class='checkout-form' id='addoperator'>
-    
-    
+
+
     <div id='billing-form' class='mb-40 '>
-        
+
         <div class='row'>
             <div class='col-md-12 col-12 mb--20'>
                 <label>First Name*</label>
                 <input type='text' name='fname' placeholder='First Name'>
                 <div id='error-fname'></div>
             </div>
-            
-            
+
+
             <div class='col-md-6 col-12 mb--20'>
                 <label>Email Address*</label>
                 <input type='email' name='email' placeholder='Email Address'>
@@ -356,8 +356,8 @@ $output="<form method='post' class='checkout-form' id='addoperator'>
                 <input type='text' name='phone' placeholder='Phone number'>
                 <div id='error-phone'></div>
             </div>
-            
-            
+
+
             <div class='col-md-12 col-12 mb--20'>
                 <label>Role*</label>
                 <select name='role' required class='nice-select'>
@@ -372,12 +372,12 @@ $output="<form method='post' class='checkout-form' id='addoperator'>
                 <input type='password' name='password' placeholder='Password'>
                 <div id='error-password'></div>
             </div>
-            
+
             <div class='col-md-12 col-12 mb--20'>
                 <button type='submit' class='btn btn--primary '>Add Operator</button>
             </div>
-            
-            
+
+
         </div>
     </div>
 </form>";
@@ -394,11 +394,11 @@ public function index()
     $csale=Sale::where("status",5)->whereDate("created_at",$date)->withSum("products","product_sale.saleprice")->get()->sum("products_sum_product_salesaleprice")??0;
 
      //with FlatMap we can read things in collection of each data
-    $msales=Sale::where("status",5)->whereMonth("created_at",Carbon::now()->month)->withSum("products","product_sale.saleprice")->get()->sum("products_sum_product_salesaleprice")??0;  
-     $pendingsale=Sale::where("status","<",5)->whereDate("created_at",$date)->withSum("products","product_sale.saleprice")->get()->sum("products_sum_product_salesaleprice")??0;  
+    $msales=Sale::where("status",5)->whereMonth("created_at",Carbon::now()->month)->withSum("products","product_sale.saleprice")->get()->sum("products_sum_product_salesaleprice")??0;
+     $pendingsale=Sale::where("status","<",5)->whereDate("created_at",$date)->withSum("products","product_sale.saleprice")->get()->sum("products_sum_product_salesaleprice")??0;
      $soldproducts=Sale::where("status",5)->wheredate("created_at",$date)->withSum("products","product_sale.quantity")->get()->sum("products_sum_product_salequantity");
 
-  $top_products=Product::withSum("sales","product_sale.quantity")->orderBy("sales_sum_product_salequantity","DESC")->take(5)->get();   
+  $top_products=Product::withSum("sales","product_sale.quantity")->orderBy("sales_sum_product_salequantity","DESC")->take(5)->get();
 $labels1="labels: [";
 $data1="series: [";
 foreach($top_products as $product)
@@ -415,7 +415,7 @@ $data1=rtrim($data1,",")."]";
      //->each(function ($sale) use (&$csale) {
             //     $csale += $sale->products->sum('pivot.saleprice');
             // });
-    
+
     // one way
 //     $csale = $sales->map(function ($sale) {
 //     return $sale->products->sum('pivot.saleprice');
@@ -427,9 +427,9 @@ $data1=rtrim($data1,",")."]";
     //     $csale+=$sale->products->sum("pivot.saleprice");
     // }
 //3rd way
-   
 
- 
+
+
 
 return view("admin.admin",compact("csale","pendingsale","msales","soldproducts","labels1","data1"));
 }
@@ -462,7 +462,7 @@ public function operatortable()
 {
 $output="
 <div class='table-responsive mt-5'>
-    
+
     <table class='table table-bordered' >
         <thead class='btn--primary'>
             <th>Sno</th>
@@ -493,15 +493,15 @@ $output="
                     }
                     else{
                     $output.="
-                    
+
                     <div class='d-flex'>
-                        
+
                         <button class=' wrapper opid' id='".$user->id."'>
                         <li class='icon  update'>
                         </span>
                         <span class='tooltip'>Update</span>
                         <span><i class='fa fa-edit'></i></button>
-                            
+
                             <button class='wrapper delid' id='".$user->id."'>
                             <li class='icon delete'>
                             </span>

@@ -4,7 +4,7 @@
             <div class=" col-xl-3 col-lg-4 col-sm-6">
                 <div class="single-footer pb--40">
                     <div>
-                        <img src="image/icon/easyshop.png" alt="" width="40%" height="40%">
+                        <img src="{{asset('image/icon/easyshop.png')}}" alt="" width="40%" height="40%">
                         <p class="text-dark bg-light">Embrace simplicity, explore diversity, and shop with ease at EasyShop!</p>
                     </div>
                 </div>
@@ -12,7 +12,7 @@
             <div class=" col-xl-3 col-lg-2 col-sm-6">
                 <div class="single-footer pb--40">
                     <div class="footer-title">
-                        <h3>Information</h3>
+                        <h3>Infomation</h3>
                     </div>
                     <ul class="footer-list normal-list">
                         <li><a href="{{ route('contact') }}">Home</a></li>
